@@ -5,6 +5,13 @@ using UnityEngine;
 public class BulletScript : MonoBehaviour
 {
 
+    /*
+    Warren Guiles
+    CIS_456_Project_1
+
+    This script mainly handles bullet richochet by changing the velocity of the bullet when it collides with a wall.    
+     */
+
     private float bulletSpeed;
     // Start is called before the first frame update
     void Start()
