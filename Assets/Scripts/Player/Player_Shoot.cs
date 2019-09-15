@@ -2,28 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+    Edouard Borissov
+    CIS_456_Project_1
+
+    This script handles the revolver's behavior. Included below are rate of fire, reload, and shooting functions.
+    Bullet behaviors, excluding bullet speed, are handled externally. Speed is handled internally for testing purposes, as
+    bullet behavior scripts have not been made yet.    
+     */
+
 public class Player_Shoot : MonoBehaviour
 {
-    public Transform revolverMuzzle;
-    public GameObject revolverBullet;
+    [Tooltip("Where the bullet is spawned")] public Transform revolverMuzzle;
+
+    [Tooltip("The bullet.")] public GameObject revolverBullet;
 
     private int loadedRevolverAmmo = 6;//The ammo currently loaded in the revolver.
 
-    /// <summary>
-    /// The amount of time before the Revolver Bullet is automatically destroyed
-    /// </summary>
-    public float revolverBulletLifeTime;
+    
+    [Tooltip("The amount of time before the Revolver Bullet is automatically destroyed")] public float revolverBulletLifeTime;
 
-    public float revolverReloadTime;
+    [Tooltip("How long it takes to reload")] public float revolverReloadTime; //replace this later with a function called at the end of an animation
 
-    public float revolverBulletSpeed;
+    [Tooltip("")] public float revolverBulletSpeed;
 
-    /// <summary>
-    /// The Revolver's rate of fire.
-    /// </summary>
-    public float revolverRof;
+    [Tooltip("The Revolver's rate of fire.")] public float revolverRof;
 
-    public bool canShoot = true;
+    [Tooltip("A bool to be used externally.")] public bool canShoot = true; //Put this here if we want other scripts to stop the player from shooting. 
     private bool canFireRevolver = true;//Used for rate of fire.
 
     void Update()
