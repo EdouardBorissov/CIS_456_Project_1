@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4085754370266917841}
   - component: {fileID: -2572794597874645077}
   - component: {fileID: -9171153247460344058}
+  - component: {fileID: -7166880390923995647}
   m_Layer: 0
   m_Name: Bullet_Revolver
   m_TagString: Untagged
@@ -102,7 +103,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!60 &-9171153247460344058
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -113,7 +114,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -137,3 +138,15 @@ PolygonCollider2D:
       - {x: 0.099999994, y: -0.074999996}
       - {x: 0.099999994, y: 0.055}
       - {x: 0.049999997, y: 0.099999994}
+--- !u!114 &-7166880390923995647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068660232534935893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97eb16555ecc34ae1bc02e89c3f9176e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
