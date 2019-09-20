@@ -120,6 +120,80 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &175660715
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 306858824005153641, guid: 95859d706cc7a46fcbb9e4d14b3b3f19,
+        type: 3}
+      propertyPath: m_Name
+      value: Managers
+      objectReference: {fileID: 0}
+    - target: {fileID: 306858824005153639, guid: 95859d706cc7a46fcbb9e4d14b3b3f19,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.5757737
+      objectReference: {fileID: 0}
+    - target: {fileID: 306858824005153639, guid: 95859d706cc7a46fcbb9e4d14b3b3f19,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.055727787
+      objectReference: {fileID: 0}
+    - target: {fileID: 306858824005153639, guid: 95859d706cc7a46fcbb9e4d14b3b3f19,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -64.846306
+      objectReference: {fileID: 0}
+    - target: {fileID: 306858824005153639, guid: 95859d706cc7a46fcbb9e4d14b3b3f19,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 306858824005153639, guid: 95859d706cc7a46fcbb9e4d14b3b3f19,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 306858824005153639, guid: 95859d706cc7a46fcbb9e4d14b3b3f19,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 306858824005153639, guid: 95859d706cc7a46fcbb9e4d14b3b3f19,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 306858824005153639, guid: 95859d706cc7a46fcbb9e4d14b3b3f19,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 306858824005153639, guid: 95859d706cc7a46fcbb9e4d14b3b3f19,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 306858824005153639, guid: 95859d706cc7a46fcbb9e4d14b3b3f19,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 306858824005153639, guid: 95859d706cc7a46fcbb9e4d14b3b3f19,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 306858824005153640, guid: 95859d706cc7a46fcbb9e4d14b3b3f19,
+        type: 3}
+      propertyPath: RicochetSounds.Array.data[1]
+      value: Ricochet2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 95859d706cc7a46fcbb9e4d14b3b3f19, type: 3}
 --- !u!1 &374791563
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,7 +421,7 @@ PrefabInstance:
     - target: {fileID: 4004722732748696908, guid: 0b910e0ed472120418c8c30bafabb3b9,
         type: 3}
       propertyPath: revolverBulletSpeed
-      value: 3000
+      value: 1500
       objectReference: {fileID: 0}
     - target: {fileID: 4004722732748696908, guid: 0b910e0ed472120418c8c30bafabb3b9,
         type: 3}
@@ -963,6 +1037,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Offset.y
       value: -0.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882140597815048788, guid: bd5518bcedb3e03468e7f8ea834a4f56,
+        type: 3}
+      propertyPath: hatBandito
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd5518bcedb3e03468e7f8ea834a4f56, type: 3}
