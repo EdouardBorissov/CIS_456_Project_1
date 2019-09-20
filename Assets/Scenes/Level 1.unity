@@ -347,7 +347,7 @@ PrefabInstance:
     - target: {fileID: 4004722732748696908, guid: 0b910e0ed472120418c8c30bafabb3b9,
         type: 3}
       propertyPath: revolverBulletSpeed
-      value: 1500
+      value: 3000
       objectReference: {fileID: 0}
     - target: {fileID: 4004722732748696908, guid: 0b910e0ed472120418c8c30bafabb3b9,
         type: 3}
