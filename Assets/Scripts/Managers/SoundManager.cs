@@ -7,8 +7,8 @@ public class SoundManager : MonoBehaviour
 {
         /*
     Warren Guiles
-    CIS_456_Project_1
     SoundManager
+    CIS_456_Project_1
     This is a singleton manager that has methods that can be called from anywhere. Contains an array of the "Sound"
     class below, which makes it very easy insert audioclips and modify elements in the inspector.
      */
