@@ -111,6 +111,7 @@ public class BanditoBehavior : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bullet")
         {
+            SoundManager.instance.PlaySound("Impact1");
             Instantiate(bloodSpatter, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

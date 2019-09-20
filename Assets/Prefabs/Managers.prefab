@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &306858824005153641
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 306858824005153639}
+  - component: {fileID: 306858824005153640}
+  m_Layer: 0
+  m_Name: Managers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &306858824005153639
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306858824005153641}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.5757737, y: -0.055727787, z: -64.846306}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &306858824005153640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306858824005153641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ed9d0ee9e8f24213ba9a343a5bce89d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Gunshot
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: b86d06ff7d26b457e8886eae03e9af20, type: 3}
+    volume: 1
+    pitch: 1
+    shouldLoop: 0
+  - name: PullHammer
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: 5895cbefa9ec14c09ba55fa0c26a7148, type: 3}
+    volume: 1
+    pitch: 1
+    shouldLoop: 0
+  - name: Ricochet1
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: c7558fa1171904e8588961155dcefab3, type: 3}
+    volume: 1
+    pitch: 1
+    shouldLoop: 0
+  - name: Ricochet2
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: 0d4e078ed9afb4e05aebc7ba4254f5cc, type: 3}
+    volume: 1
+    pitch: 1
+    shouldLoop: 0
+  - name: Ricochet3
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: 9847d095a85f64da39eafe23e21b5c03, type: 3}
+    volume: 1
+    pitch: 1
+    shouldLoop: 0
+  - name: Impact1
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: f32d6a29673b44a52840c2adfd84ca2d, type: 3}
+    volume: 1
+    pitch: 1
+    shouldLoop: 0
+  - name: Ricochet4
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: dd2a1b4bad8594082960a0198ef7da1f, type: 3}
+    volume: 1
+    pitch: 1
+    shouldLoop: 0

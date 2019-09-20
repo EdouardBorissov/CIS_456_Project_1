@@ -28,6 +28,8 @@ public class BulletScript : MonoBehaviour
 
             Debug.Log("New Velocity " + bulletRB.velocity.x.ToString() + " " + bulletRB.velocity.y.ToString());
 
+            SoundManager.instance.PlayRandomRicochet();
+
         }
         else if(!collision.gameObject.CompareTag("Wall") && !collision.gameObject.CompareTag("Player"))
         {
