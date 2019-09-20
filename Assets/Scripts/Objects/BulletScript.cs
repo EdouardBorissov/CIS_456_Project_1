@@ -24,7 +24,7 @@ public class BulletScript : MonoBehaviour
             Debug.Log("Old Velocity " + bulletRB.velocity.x.ToString() + " " + bulletRB.velocity.y.ToString());
             //change the velocity based on where this wall is facing
 
-            bulletRB.velocity = (Vector2.Reflect(bulletRB.velocity, collision.contacts[0].normal).normalized) * bulletSpeed * Time.deltaTime;
+            bulletRB.velocity = (Vector2.Reflect(bulletRB.velocity, collision.contacts[0].normal).normalized) * (bulletSpeed/2) * Time.deltaTime;
 
             Debug.Log("New Velocity " + bulletRB.velocity.x.ToString() + " " + bulletRB.velocity.y.ToString());
 
