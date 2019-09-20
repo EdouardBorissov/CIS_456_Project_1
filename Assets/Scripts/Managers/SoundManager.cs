@@ -5,9 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class SoundManager : MonoBehaviour
 {
+        /*
+    Warren Guiles
+    CIS_456_Project_1
+    SoundManager
+    This is a singleton manager that has methods that can be called from anywhere. Contains an array of the "Sound"
+    class below, which makes it very easy insert audioclips and modify elements in the inspector.
+     */
+    
+    //static instance for singleton
     public static SoundManager instance;
 
 
+    //class for each sound has a name, source, clip, volume, and pitch
     [System.Serializable]
     public class Sound
     {
@@ -30,15 +40,16 @@ public class SoundManager : MonoBehaviour
 
     }
 
+    //the array of sound classes
     public Sound[] sounds;
 
-    private string[] RicochetSounds = {"Ricochet1", "Ricochet2", "Ricochet3", "Ricochet4"};
+
 
 
     private void Awake()
     {
 
-
+        //the process of making this class a singleton (if this doesn't exist yet, make it a singleton. Otherwise, destroy this)
         if (instance == null)
         {
             instance = this;
@@ -47,6 +58,8 @@ public class SoundManager : MonoBehaviour
         else
             Destroy(gameObject);
 
+        //go through the sounds array and make a new source for each one, and assign that souce 
+        //the corresponding source, clip, volume, pitch, and whether or not it should loop
         foreach(Sound s in sounds)
         {
             AudioSource newSource = gameObject.AddComponent<AudioSource>() as AudioSource;
@@ -58,24 +71,10 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    private void OnEnable()
-    {
-        SceneManager.sceneLoaded += OnLevelFinishedLoading;
-    }
 
-    private void OnDisable()
-    {
-        SceneManager.sceneLoaded -= OnLevelFinishedLoading;
-    }
-
-    void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
-    {
-        if (scene.buildIndex == 1)
-            PlaySound("ambientMusic");
-
-    }
-
-
+    //Loops through the array until a sound with the same name 
+    //as the string that was passed through is found, and then
+    //plays that sound
     public void PlaySound(string clipName)
     {
         foreach (Sound s in sounds)
@@ -87,6 +86,9 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    //Loops through the array until a sound with the same name 
+    //as the string that was passed through is found, and then
+    //plays stops sound
     public void StopStound(string clipName)
     {
         foreach (Sound s in sounds)
@@ -98,22 +100,18 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    //a string containing the names of all the ricochet sounds
+    private string[] RicochetSounds = {"Ricochet1", "Ricochet2", "Ricochet3", "Ricochet4"};
+
+    //this grabs a random string from the RichochetSounds array and passes it
+    //into the Playsound method. bullets are going to be bouncing frequently 
+    //in our game, so we thought it'd be best to have different sounds
+    //to avoid tedium
+
     public void PlayRandomRicochet()
     {
         int RandomNum = Random.Range(0,4);
 
         PlaySound(RicochetSounds[RandomNum]);
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

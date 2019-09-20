@@ -8,7 +8,7 @@ public class BulletScript : MonoBehaviour
     /*
     Warren Guiles
     CIS_456_Project_1
-
+    BulletScript
     This script mainly handles bullet richochet by changing the velocity of the bullet when it collides with a wall.    
      */
 
@@ -22,6 +22,7 @@ public class BulletScript : MonoBehaviour
           Rigidbody2D bulletRB = gameObject.GetComponent<Rigidbody2D>();
 
             Debug.Log("Old Velocity " + bulletRB.velocity.x.ToString() + " " + bulletRB.velocity.y.ToString());
+            
             //change the velocity based on where this wall is facing
 
             bulletRB.velocity = (Vector2.Reflect(bulletRB.velocity, collision.contacts[0].normal).normalized) * (bulletSpeed/2) * Time.deltaTime;
@@ -31,12 +32,14 @@ public class BulletScript : MonoBehaviour
             SoundManager.instance.PlayRandomRicochet();
 
         }
+        //destroy bullets that hit the player
         else if(!collision.gameObject.CompareTag("Wall") && !collision.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
         }
     }
 
+    //setter for bullet speed
     public void SetBulletSpeed(float newSpeed)
     {
         bulletSpeed = newSpeed;
