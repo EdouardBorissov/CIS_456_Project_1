@@ -11,8 +11,10 @@ GameObject:
   - component: {fileID: 4004722732748696911}
   - component: {fileID: 4004722732748696910}
   - component: {fileID: 4004722732748696908}
+  - component: {fileID: 1352764065}
   - component: {fileID: 4004722732748696909}
-  m_Layer: 0
+  - component: {fileID: 1352764066}
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,6 +107,20 @@ MonoBehaviour:
   revolverBulletSpeed: 5000
   revolverRof: 0.5
   canShoot: 1
+--- !u!114 &1352764065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4004722732748696899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 705a449f3af21d1438e72890f83f1da0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  jump: 10
 --- !u!61 &4004722732748696909
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -131,6 +147,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.4206998, y: 4.1688023}
   m_EdgeRadius: 0
+--- !u!50 &1352764066
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4004722732748696899}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &4004722732865233751
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4004722732865233744}
   - component: {fileID: 4004722732865233745}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player_Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,7 +225,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4004722733410312530}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,7 +256,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4004722733491068123}
   - component: {fileID: 4004722733491068100}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Art_Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -233,13 +270,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4004722733491068122}
-  m_LocalRotation: {x: 0, y: 0, z: 0.29137006, w: 0.9566104}
-  m_LocalPosition: {x: -0.12, y: -0.22, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0.05, y: -0.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4004722732865233744}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 33.88}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!212 &4004722733491068100
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -278,7 +315,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 0761e3d3cc2f1ed4abe24b20d11feae2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 76e2963be77551b47a6f89b0af77398a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -299,7 +336,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4004722733843253732}
   - component: {fileID: 4004722733843253733}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cowboy Leg1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -379,7 +416,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4004722734780723826}
   - component: {fileID: 4004722734780723827}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cowboy Leg 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
