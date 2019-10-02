@@ -54,7 +54,7 @@ public class Player_Shoot : MonoBehaviour
                 loadedRevolverAmmo--;
                 GameObject firedBullet = Instantiate(revolverBullet, revolverMuzzle.transform.position, revolverMuzzle.transform.rotation);//Spawns bullet.
                 SoundManager.instance.PlaySound("Gunshot");
-                firedBullet.GetComponent<Rigidbody2D>().velocity = firedBullet.transform.right * revolverBulletSpeed * Time.deltaTime;
+                firedBullet.GetComponent<Rigidbody2D>().velocity = revolverMuzzle.transform.right * revolverBulletSpeed * Time.deltaTime;
                 firedBullet.GetComponent<BulletScript>().SetBulletSpeed(revolverBulletSpeed);
                Destroy(firedBullet, revolverBulletLifeTime);
                 if (loadedRevolverAmmo <= 0) // If the player tries to shoot, auto-reload.
