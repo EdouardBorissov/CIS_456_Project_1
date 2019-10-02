@@ -2,15 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ Nathan - Created the code for basic movement.
+
+    Eddie - Helped Nathan refine movement by showing refactoring some of the code and switching movement to velocity.
+     
+     
+     */
+
+
 public class Player_Move : MonoBehaviour
 {
     public float speed = 5f;
     public float jump = 5f;
-    private bool onGround = true;
+    public bool onGround = true;
+    private Rigidbody2D playerRB;
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerRB = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -18,19 +28,24 @@ public class Player_Move : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.D))
         {
-            transform.position = new Vector3(transform.position.x + speed * Time.deltaTime, transform.position.y, transform.position.z);
+            playerRB.velocity = new Vector2(speed * Time.deltaTime, playerRB.velocity.y);
+        }
+        else if (Input.GetKey(KeyCode.A))
+        {
+            playerRB.velocity = new Vector2(speed * Time.deltaTime * -1, playerRB.velocity.y);
+        }
+        else
+        {
+            playerRB.velocity = new Vector2(0, playerRB.velocity.y);
         }
 
-        if(Input.GetKey(KeyCode.A))
+        if(Input.GetKeyDown(KeyCode.Space) && onGround)
         {
-            transform.position = new Vector3(transform.position.x - speed * Time.deltaTime, transform.position.y, transform.position.z);
-        }
-
-        if(Input.GetKeyDown(KeyCode.W) && onGround)
-        {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jump);
+            playerRB.velocity = new Vector2(playerRB.velocity.x, jump);
             onGround = false;
         }
+
+
     }
 
     void OnCollisionEnter2D(Collision2D collision)
