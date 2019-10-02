@@ -19,8 +19,50 @@ public class Player_Aim : MonoBehaviour
     private Vector2 mouseCoordinates;
     public Transform playerTransform;
 
-    void Update()
+    private Rigidbody2D _rb;
+    
+
+
+
+    private LineRenderer gunToImpactRenderer;
+
+    private LineRenderer ricochetRenderer;
+
+    public GameObject revolverMuzzle;
+
+    public float RendererDistance;
+
+    private Vector3[] positionArray = new Vector3[2];
+    private Vector3[] ricochetPositionArray = new Vector3[3];
+
+     private void Awake() 
     {
+    positionArray[0] = revolverMuzzle.transform.position;
+
+    gunToImpactRenderer = gameObject.AddComponent<LineRenderer>();
+    ricochetRenderer    = gameObject.AddComponent<LineRenderer>();
+
+    gunToImpactRenderer.startWidth = 0.2f;
+    //ricochetRenderer.startWidth    = 0.2f;
+    _rb                            = GetComponent<Rigidbody2D>();
+
+    }
+
+    private void Start() 
+    {
+
+        
+   gunToImpactRenderer.positionCount = 3;
+
+
+        //ricochetRenderer = new LineRenderer();
+    }
+
+
+    void Update()
+
+    {
+        DrawGunToImpactRenderer();
 
         if (canRotate) //Might not be necessary, figured maybe you can't rotate while reloading the revolver?
         {
@@ -34,8 +76,50 @@ public class Player_Aim : MonoBehaviour
         SetMouseCoordinates();
        
         CurrentDirectionFacing();
+
+        DrawRicochetRenderer();
     }
 
+    private void DrawGunToImpactRenderer()
+    {
+
+
+    }
+
+    private void DrawRicochetRenderer()
+    {
+        positionArray[0] = revolverMuzzle.transform.position;
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right * 150f);
+
+        if (hit.collider != null)
+        {
+            Debug.Log("A thick stick in my dick");
+            positionArray[1] = hit.point;
+          
+
+            ricochetPositionArray[0] = revolverMuzzle.transform.position;
+            ricochetPositionArray[1] = hit.point;
+            ricochetPositionArray[2] = (Vector3.Reflect(transform.right * -150f, hit.transform.up)).normalized * 150f;
+
+            gunToImpactRenderer.SetPositions(ricochetPositionArray);
+        }
+        else
+        {
+         Vector3 mouseLocation = Input.mousePosition;
+        mouseLocation = Camera.main.ScreenToWorldPoint(mouseLocation);
+        directionFacing = new Vector2(mouseLocation.x - revolverMuzzle.transform.position.x, mouseLocation.y - revolverMuzzle.transform.position.y);
+
+        positionArray[1] = revolverMuzzle.transform.right * 150f;
+
+        gunToImpactRenderer.SetPositions(positionArray);
+        }
+
+
+
+
+
+
+    }
 
     public void RotateToMouse()
     {
