@@ -13,6 +13,7 @@ using UnityEngine;
 
 public class Player_Move : MonoBehaviour
 {
+    public LayerMask mask;
     public float speed = 5f;
     public float jump = 5f;
     public bool onGround = true;
@@ -39,6 +40,9 @@ public class Player_Move : MonoBehaviour
             playerRB.velocity = new Vector2(0, playerRB.velocity.y);
         }
 
+        if (Physics2D.Raycast(transform.position, Vector2.down, 2, mask)) onGround = true;
+        else onGround = false;
+
         if(Input.GetKeyDown(KeyCode.Space) && onGround)
         {
             playerRB.velocity = new Vector2(playerRB.velocity.x, jump);
@@ -50,7 +54,5 @@ public class Player_Move : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Wall")
-            onGround = true;
     }
 }
