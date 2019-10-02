@@ -89,11 +89,10 @@ public class Player_Aim : MonoBehaviour
     private void DrawRicochetRenderer()
     {
         positionArray[0] = revolverMuzzle.transform.position;
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right * 150f);
+        RaycastHit2D hit = Physics2D.Raycast(revolverMuzzle.transform.position, revolverMuzzle.transform.right * 150f);
 
         if (hit.collider != null)
         {
-            Debug.Log("A thick stick in my dick");
             positionArray[1] = hit.point;
           
 
@@ -105,6 +104,7 @@ public class Player_Aim : MonoBehaviour
         }
         else
         {
+
          Vector3 mouseLocation = Input.mousePosition;
         mouseLocation = Camera.main.ScreenToWorldPoint(mouseLocation);
         directionFacing = new Vector2(mouseLocation.x - revolverMuzzle.transform.position.x, mouseLocation.y - revolverMuzzle.transform.position.y);
