@@ -6,7 +6,7 @@ using UnityEngine;
  Nathan - Created the code for basic movement.
 
     Eddie - Helped Nathan refine movement by showing refactoring some of the code and switching movement to velocity.
-     
+    Connor - Revised jumping to make it more responsive. Longer hold = longer jump. Raycast vs tag system.
      
      */
 
@@ -16,6 +16,7 @@ public class Player_Move : MonoBehaviour
     public LayerMask mask;
     public float speed = 5f;
     public float jump = 5f;
+    public float jumpVary;
     public bool onGround = true;
     private Rigidbody2D playerRB;
     // Start is called before the first frame update
@@ -47,6 +48,10 @@ public class Player_Move : MonoBehaviour
         {
             playerRB.velocity = new Vector2(playerRB.velocity.x, jump);
             onGround = false;
+        }
+        if (Input.GetKey(KeyCode.Space) && playerRB.velocity.y > 0)
+        {
+            playerRB.AddForce(Vector2.up * Time.deltaTime * jumpVary);
         }
 
 
