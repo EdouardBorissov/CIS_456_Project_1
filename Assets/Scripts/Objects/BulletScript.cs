@@ -28,13 +28,13 @@ public class BulletScript : MonoBehaviour
             //grab the bullet's rigidbody
           Rigidbody2D bulletRB = gameObject.GetComponent<Rigidbody2D>();
 
-            Debug.Log("Old Velocity " + bulletRB.velocity.x.ToString() + " " + bulletRB.velocity.y.ToString());
+          //  Debug.Log("Old Velocity " + bulletRB.velocity.x.ToString() + " " + bulletRB.velocity.y.ToString());
             
             //change the velocity based on where this wall is facing
 
             bulletRB.velocity = (Vector2.Reflect(bulletRB.velocity, collision.contacts[0].normal).normalized) * (bulletSpeed/2) * Time.deltaTime;
 
-            Debug.Log("New Velocity " + bulletRB.velocity.x.ToString() + " " + bulletRB.velocity.y.ToString());
+           // Debug.Log("New Velocity " + bulletRB.velocity.x.ToString() + " " + bulletRB.velocity.y.ToString());
 
             SoundManager.instance.PlayRandomRicochet();
 
