@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: e1b141c8d6fc6474698093ea9a596e2e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -119,8 +119,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 705a449f3af21d1438e72890f83f1da0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 500
   jump: 10
+  onGround: 1
 --- !u!61 &4004722732748696909
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -216,6 +217,8 @@ MonoBehaviour:
   hasFlipped: 1
   canRotate: 1
   playerTransform: {fileID: 4004722732748696911}
+  revolverMuzzle: {fileID: 4004722733410312529}
+  RendererDistance: 0
 --- !u!1 &4004722733410312529
 GameObject:
   m_ObjectHideFlags: 0

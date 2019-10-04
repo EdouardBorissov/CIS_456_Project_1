@@ -1116,6 +1116,27 @@ PrefabInstance:
       propertyPath: hatBandito
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2882140597815048791, guid: bd5518bcedb3e03468e7f8ea834a4f56,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 466c669511d0c874fac28fb4ab02ee00,
+        type: 3}
+    - target: {fileID: 2882140597815048791, guid: bd5518bcedb3e03468e7f8ea834a4f56,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 11.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882140597815048791, guid: bd5518bcedb3e03468e7f8ea834a4f56,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 15.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882140597815048791, guid: bd5518bcedb3e03468e7f8ea834a4f56,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd5518bcedb3e03468e7f8ea834a4f56, type: 3}
 --- !u!1 &1937856200
