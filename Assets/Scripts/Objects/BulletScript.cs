@@ -17,7 +17,7 @@ public class BulletScript : MonoBehaviour
 
     //how many times the bullet bounces before it destroys itself
     //(if it's 0 it will bounce for forever)
-    public float bounceLimit;
+    public int bounceLimit;
 
     private float numberOfBounces = 0;
 
