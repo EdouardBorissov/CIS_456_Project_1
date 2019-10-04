@@ -89,15 +89,20 @@ public class Player_Aim : MonoBehaviour
         positionArray[0] = revolverMuzzle.transform.position;
         RaycastHit2D hit = Physics2D.Raycast(revolverMuzzle.transform.position, revolverMuzzle.transform.right * 150f);
 
-        if (hit.collider != null && hit.collider.gameObject.tag == "Wall")
+        if (hit.collider != null)
         {        
-            positionArray[1] = hit.point;
+
+            if (hit.collider.tag != "Bullet")
+            {
+                 positionArray[1] = hit.point;
+            }
+           
             //positionArray[2] = (Vector2.Reflect(transform.right * -150f, hit.transform.up).normalized) * 150f;
 
         }
-        else
+        else 
         {
-        positionArray[1] = revolverMuzzle.transform.right * 150f;
+            positionArray[1] = revolverMuzzle.transform.right * 150f;
         }
 
 
