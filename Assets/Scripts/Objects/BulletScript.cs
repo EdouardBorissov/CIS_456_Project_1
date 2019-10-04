@@ -14,6 +14,13 @@ public class BulletScript : MonoBehaviour
 
     private float bulletSpeed;
 
+
+    //how many times the bullet bounces before it destroys itself
+    //(if it's 0 it will bounce for forever)
+    public float bounceLimit;
+
+    private float numberOfBounces = 0;
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Wall")
@@ -30,6 +37,13 @@ public class BulletScript : MonoBehaviour
             Debug.Log("New Velocity " + bulletRB.velocity.x.ToString() + " " + bulletRB.velocity.y.ToString());
 
             SoundManager.instance.PlayRandomRicochet();
+
+            numberOfBounces++;
+
+            if (numberOfBounces > bounceLimit && bounceLimit != 0)
+            {
+                Destroy(gameObject);
+            }
 
         }
         //destroy bullets that hit the player
