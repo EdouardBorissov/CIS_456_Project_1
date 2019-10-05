@@ -2,6 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+  * Eddie Borissov
+  * CIS_456
+  * Project 2
+  * 
+  * A simple script that allows a shot object to make others drop and others to be destroyed.
+  * 
+  */
+
 public class BagOfGoldBehavior : MonoBehaviour
 {
     public List<GameObject> objectsToDestroy;

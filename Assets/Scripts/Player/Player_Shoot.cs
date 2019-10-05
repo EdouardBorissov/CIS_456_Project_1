@@ -19,7 +19,7 @@ public class Player_Shoot : MonoBehaviour
 
     private int loadedRevolverAmmo = 6;//The ammo currently loaded in the revolver.
 
-    
+
     [Tooltip("The amount of time before the Revolver Bullet is automatically destroyed")] public float revolverBulletLifeTime;
 
     [Tooltip("How long it takes to reload")] public float revolverReloadTime; //replace this later with a function called at the end of an animation
@@ -30,7 +30,7 @@ public class Player_Shoot : MonoBehaviour
 
     [Tooltip("A bool to be used externally.")] public bool canShoot = true; //Put this here if we want other scripts to stop the player from shooting. 
     private bool canFireRevolver = true;//Used for rate of fire.
-
+    public PlayerUI_Ammo playerUIScript;
     void Update()
     {
         if (Input.GetButtonDown("Fire1") && canShoot)
@@ -39,6 +39,7 @@ public class Player_Shoot : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
+            playerUIScript.ReloadBullets();
             Invoke("ReloadRevolver", revolverReloadTime);
         }
     }
@@ -57,11 +58,13 @@ public class Player_Shoot : MonoBehaviour
                 firedBullet.GetComponent<Rigidbody2D>().velocity = revolverMuzzle.transform.right * revolverBulletSpeed * Time.deltaTime;
 
                 firedBullet.GetComponent<BulletScript>().SetBulletSpeed(revolverBulletSpeed);
-               Destroy(firedBullet, revolverBulletLifeTime);
+                Destroy(firedBullet, revolverBulletLifeTime);
+                playerUIScript.ShootBullet();
                 if (loadedRevolverAmmo <= 0) // If the player tries to shoot, auto-reload.
                 {
-                   Invoke("ReloadRevolver", revolverReloadTime);
-                   canFireRevolver = false;
+                    playerUIScript.ReloadBullets();
+                    Invoke("ReloadRevolver", revolverReloadTime);
+                    canFireRevolver = false;
                 }
             }
 
@@ -69,22 +72,26 @@ public class Player_Shoot : MonoBehaviour
     }
 
     public void ReloadRevolver()
-    {       
-            for (int i = 6; i > 0; i--)//tries to put six bullets in
+    {
+
+        for (int i = 6; i > 0; i--)//tries to put six bullets in
+        {
+            if (loadedRevolverAmmo < 6) //makes sure u have bullets to take, and slots to put them in
             {
-                if (loadedRevolverAmmo < 6) //makes sure u have bullets to take, and slots to put them in
-                {  
-                    loadedRevolverAmmo++;
-                }
+                loadedRevolverAmmo++;
+            }
             else
             {
+                playerUIScript.StopRotatingCylinder();
                 RevolverCanFire();
             }
-            }
+            playerUIScript.StopRotatingCylinder();
+        }
     }
 
     public void RevolverCanFire()
     {
+   
         canFireRevolver = true;
     }
 

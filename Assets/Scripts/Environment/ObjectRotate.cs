@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class ObjectRotate : MonoBehaviour
 {
-
+    /*
+     * Eddie Borissov
+     * CIS_456
+     * Project 2
+     * 
+     * Just a quick code to rotate any object by some amount at some frequency.
+     * 
+     */
     public float rotationAmount;
     public float rotationFrequency;
     // Start is called before the first frame update
