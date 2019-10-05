@@ -37,8 +37,9 @@ public class Player_Aim : MonoBehaviour
 
      private void Awake() 
     {
-    //positionArray[0] = revolverMuzzle.transform.position;
 
+
+        //add a linerenderer to the player's arm
     gunToImpactRenderer = gameObject.AddComponent<LineRenderer>();
     gunToImpactRenderer.startWidth = 0.2f;
     _rb     = GetComponent<Rigidbody2D>();
@@ -86,20 +87,22 @@ public class Player_Aim : MonoBehaviour
 
     private void DrawRicochetRenderer()
     {
+        //the linerenderer will always start at the muzzle
         positionArray[0] = revolverMuzzle.transform.position;
+
+        //raycast from the muzzle outwards
         RaycastHit2D hit = Physics2D.Raycast(revolverMuzzle.transform.position, revolverMuzzle.transform.right * 150f);
 
+        //if it hits something that's not a bullet the second point of the linerenderer 
         if (hit.collider != null)
         {        
-
             if (hit.collider.tag != "Bullet")
             {
                  positionArray[1] = hit.point;
             }
-           
-            //positionArray[2] = (Vector2.Reflect(transform.right * -150f, hit.transform.up).normalized) * 150f;
-
         }
+
+        //otherwise, just go extend the linerenderer from the barrel
         else 
         {
             positionArray[1] = revolverMuzzle.transform.right * 150f;
@@ -107,10 +110,6 @@ public class Player_Aim : MonoBehaviour
 
 
          gunToImpactRenderer.SetPositions(positionArray);
-
-
-
-
     }
 
     public void RotateToMouse()
