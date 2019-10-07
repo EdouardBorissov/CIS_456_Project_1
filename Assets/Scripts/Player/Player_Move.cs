@@ -23,6 +23,7 @@ public class Player_Move : MonoBehaviour
     void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
+        //transform.position = new Vector2(-12, -3);
     }
 
     // Update is called once per frame
@@ -49,13 +50,8 @@ public class Player_Move : MonoBehaviour
             playerRB.velocity = new Vector2(playerRB.velocity.x, jump);
             onGround = false;
         }
-        if (Input.GetKey(KeyCode.Space) && playerRB.velocity.y > 0)
-        {
-            playerRB.AddForce(Vector2.up * Time.deltaTime * jumpVary);
-        }
-
-
     }
+
 
     void OnCollisionEnter2D(Collision2D collision)
     {
