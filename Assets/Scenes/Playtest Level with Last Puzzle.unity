@@ -1060,7 +1060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9c55cd725421cd41acbdf9345b35d1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationAmount: -0.1
+  rotationAmount: -0.02
   rotationFrequency: 0.001
 --- !u!212 &256556098
 SpriteRenderer:
@@ -7197,7 +7197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9c55cd725421cd41acbdf9345b35d1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationAmount: -0.1
+  rotationAmount: -0.02
   rotationFrequency: 0.001
 --- !u!212 &1059791999
 SpriteRenderer:
@@ -10420,7 +10420,7 @@ PrefabInstance:
     - target: {fileID: 7327137167928800426, guid: 2b495a6d95060054eba94e5bad02b81e,
         type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7327137167928800426, guid: 2b495a6d95060054eba94e5bad02b81e,
         type: 3}
@@ -15037,21 +15037,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 1.7
       objectReference: {fileID: 0}
-    - target: {fileID: 4004722732748696908, guid: 0b910e0ed472120418c8c30bafabb3b9,
-        type: 3}
-      propertyPath: playerUIScript
-      value: 
-      objectReference: {fileID: 464316950}
-    - target: {fileID: 4004722732748696908, guid: 0b910e0ed472120418c8c30bafabb3b9,
-        type: 3}
-      propertyPath: revolverRof
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4004722732748696908, guid: 0b910e0ed472120418c8c30bafabb3b9,
-        type: 3}
-      propertyPath: revolverReloadTime
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 1352764065, guid: 0b910e0ed472120418c8c30bafabb3b9, type: 3}
       propertyPath: mask.m_Bits
       value: 1024
@@ -15067,6 +15052,21 @@ PrefabInstance:
     - target: {fileID: 1352764065, guid: 0b910e0ed472120418c8c30bafabb3b9, type: 3}
       propertyPath: speed
       value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 4004722732748696908, guid: 0b910e0ed472120418c8c30bafabb3b9,
+        type: 3}
+      propertyPath: playerUIScript
+      value: 
+      objectReference: {fileID: 464316950}
+    - target: {fileID: 4004722732748696908, guid: 0b910e0ed472120418c8c30bafabb3b9,
+        type: 3}
+      propertyPath: revolverRof
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4004722732748696908, guid: 0b910e0ed472120418c8c30bafabb3b9,
+        type: 3}
+      propertyPath: revolverReloadTime
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b910e0ed472120418c8c30bafabb3b9, type: 3}
