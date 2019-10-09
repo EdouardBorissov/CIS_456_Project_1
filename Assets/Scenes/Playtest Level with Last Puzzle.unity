@@ -7965,7 +7965,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01fc3e0150527f741bef3f8c6c4332b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectsToDestroy: []
+  objectsToDestroy:
+  - {fileID: 1096035042}
   objectsToFall:
   - {fileID: 450591016}
   - {fileID: 2079631651}
@@ -11163,7 +11164,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01fc3e0150527f741bef3f8c6c4332b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectsToDestroy: []
+  objectsToDestroy:
+  - {fileID: 1520665968}
   objectsToFall:
   - {fileID: 1475245793}
 --- !u!212 &1520665972
@@ -15546,7 +15548,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01fc3e0150527f741bef3f8c6c4332b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectsToDestroy: []
+  objectsToDestroy:
+  - {fileID: 2128283799}
   objectsToFall:
   - {fileID: 1356143987}
 --- !u!212 &2128283803
