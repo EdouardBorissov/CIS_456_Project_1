@@ -26,15 +26,15 @@ public class BulletScript : MonoBehaviour
         if (collision.gameObject.tag == "Wall")
         {
             //grab the bullet's rigidbody
-          Rigidbody2D bulletRB = gameObject.GetComponent<Rigidbody2D>();
+            Rigidbody2D bulletRB = gameObject.GetComponent<Rigidbody2D>();
 
-          //  Debug.Log("Old Velocity " + bulletRB.velocity.x.ToString() + " " + bulletRB.velocity.y.ToString());
-            
+            //  Debug.Log("Old Velocity " + bulletRB.velocity.x.ToString() + " " + bulletRB.velocity.y.ToString());
+
             //change the velocity based on where this wall is facing
 
-            bulletRB.velocity = (Vector2.Reflect(bulletRB.velocity, collision.contacts[0].normal).normalized) * (bulletSpeed/2) * Time.deltaTime;
+            bulletRB.velocity = (Vector2.Reflect(bulletRB.velocity, collision.contacts[0].normal).normalized) * (bulletSpeed / 2) * Time.deltaTime;
 
-           // Debug.Log("New Velocity " + bulletRB.velocity.x.ToString() + " " + bulletRB.velocity.y.ToString());
+            // Debug.Log("New Velocity " + bulletRB.velocity.x.ToString() + " " + bulletRB.velocity.y.ToString());
 
             SoundManager.instance.PlayRandomRicochet();
 
@@ -50,16 +50,16 @@ public class BulletScript : MonoBehaviour
         {
 
             Destroy(collision.gameObject);
-                        //grab the bullet's rigidbody
-          Rigidbody2D bulletRB = gameObject.GetComponent<Rigidbody2D>();
+            //grab the bullet's rigidbody
+            Rigidbody2D bulletRB = gameObject.GetComponent<Rigidbody2D>();
 
-          //  Debug.Log("Old Velocity " + bulletRB.velocity.x.ToString() + " " + bulletRB.velocity.y.ToString());
-            
+            //  Debug.Log("Old Velocity " + bulletRB.velocity.x.ToString() + " " + bulletRB.velocity.y.ToString());
+
             //change the velocity based on where this wall is facing
 
-            bulletRB.velocity = (Vector2.Reflect(bulletRB.velocity, collision.contacts[0].normal).normalized) * (bulletSpeed/2) * Time.deltaTime;
+            bulletRB.velocity = (Vector2.Reflect(bulletRB.velocity, collision.contacts[0].normal).normalized) * (bulletSpeed / 2) * Time.deltaTime;
 
-           // Debug.Log("New Velocity " + bulletRB.velocity.x.ToString() + " " + bulletRB.velocity.y.ToString());
+            // Debug.Log("New Velocity " + bulletRB.velocity.x.ToString() + " " + bulletRB.velocity.y.ToString());
 
             SoundManager.instance.PlayRandomRicochet();
 
@@ -71,7 +71,7 @@ public class BulletScript : MonoBehaviour
             }
         }
         //destroy bullets that hit the player
-        else if(!collision.gameObject.CompareTag("Wall") && !collision.gameObject.CompareTag("Player"))
+        else if (!collision.gameObject.CompareTag("Wall") && !collision.gameObject.CompareTag("Player") && !collision.gameObject.CompareTag("Chain"))
         {
             Destroy(gameObject);
         }
