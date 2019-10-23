@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -4911488102078128555}
   - component: {fileID: 4911510715764516708}
   - component: {fileID: 1231439526987652039}
+  - component: {fileID: 7877787344412176280}
   m_Layer: 9
   m_Name: Bullet_Revolver
   m_TagString: Bullet
@@ -4856,3 +4857,20 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &7877787344412176280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068660232534935893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b29fa8f807ce9462f9851b667144be6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sendTriggerMessage: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 512
+  skinWidth: 0.2
