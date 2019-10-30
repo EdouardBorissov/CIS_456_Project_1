@@ -26,7 +26,7 @@ public class BagOfGoldBehavior : MonoBehaviour
 
             foreach (Rigidbody2D rb in objectsToFall)
             {
-            
+                rb.bodyType = RigidbodyType2D.Dynamic;
                 rb.constraints = RigidbodyConstraints2D.None;
                 Debug.Log("object should have dropped found.");
             }
@@ -36,6 +36,9 @@ public class BagOfGoldBehavior : MonoBehaviour
                 Debug.Log("object: " + gameObj.gameObject.name + " will be destroyed");
                 Destroy(gameObj);
             }
+
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            gameObject.GetComponent<Collider2D>().enabled = false;
         }
     }
 }
