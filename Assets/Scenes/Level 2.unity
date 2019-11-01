@@ -181,9 +181,10 @@ GameObject:
   - component: {fileID: 138241942}
   - component: {fileID: 138241945}
   - component: {fileID: 138241944}
+  - component: {fileID: 138241946}
   - component: {fileID: 138241943}
   m_Layer: 10
-  m_Name: Ground (9)
+  m_Name: DeathGround (1)
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -299,6 +300,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &138241946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138241941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d42c882d3118c8418b8c247c3058651, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canKill: 1
 --- !u!1 &338559815
 GameObject:
   m_ObjectHideFlags: 0
@@ -833,7 +847,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f216a926ab7fb4c32ad2000da82d62e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NewestCheckpoint: {fileID: 0}
+  newestCheckpoint: {fileID: 0}
 --- !u!1 &526657152
 GameObject:
   m_ObjectHideFlags: 0
@@ -1219,6 +1233,7 @@ GameObject:
   - component: {fileID: 563169310}
   - component: {fileID: 563169309}
   - component: {fileID: 563169308}
+  - component: {fileID: 563169311}
   m_Layer: 10
   m_Name: dropPlatform
   m_TagString: Wall
@@ -1327,6 +1342,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65a699fe7f53943409356473b2351418, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &563169311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563169306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d42c882d3118c8418b8c247c3058651, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canKill: 1
 --- !u!1 &589741734
 GameObject:
   m_ObjectHideFlags: 0
@@ -1565,6 +1593,7 @@ GameObject:
   - component: {fileID: 686488614}
   - component: {fileID: 686488613}
   - component: {fileID: 686488612}
+  - component: {fileID: 686488615}
   m_Layer: 10
   m_Name: dropPlatform
   m_TagString: Wall
@@ -1673,6 +1702,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65a699fe7f53943409356473b2351418, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &686488615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686488610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d42c882d3118c8418b8c247c3058651, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canKill: 1
 --- !u!1 &750114354
 GameObject:
   m_ObjectHideFlags: 0
@@ -1814,6 +1856,7 @@ GameObject:
   - component: {fileID: 849651659}
   - component: {fileID: 849651658}
   - component: {fileID: 849651657}
+  - component: {fileID: 849651660}
   m_Layer: 10
   m_Name: dropPlatform
   m_TagString: Wall
@@ -1922,6 +1965,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65a699fe7f53943409356473b2351418, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &849651660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849651655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d42c882d3118c8418b8c247c3058651, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canKill: 1
 --- !u!1 &921105547
 GameObject:
   m_ObjectHideFlags: 0
@@ -2063,6 +2119,7 @@ GameObject:
   - component: {fileID: 954966507}
   - component: {fileID: 954966506}
   - component: {fileID: 954966505}
+  - component: {fileID: 954966508}
   m_Layer: 10
   m_Name: dropPlatform
   m_TagString: Wall
@@ -2171,6 +2228,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65a699fe7f53943409356473b2351418, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &954966508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954966503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d42c882d3118c8418b8c247c3058651, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canKill: 1
 --- !u!1 &1001996900
 GameObject:
   m_ObjectHideFlags: 0
@@ -3432,9 +3502,10 @@ GameObject:
   - component: {fileID: 1813472934}
   - component: {fileID: 1813472936}
   - component: {fileID: 1813472935}
+  - component: {fileID: 1813472938}
   - component: {fileID: 1813472937}
   m_Layer: 10
-  m_Name: Ground (2)
+  m_Name: DeathGround
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3550,6 +3621,19 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &1813472938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813472933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d42c882d3118c8418b8c247c3058651, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canKill: 1
 --- !u!1 &1816556948
 GameObject:
   m_ObjectHideFlags: 0
@@ -3561,9 +3645,10 @@ GameObject:
   - component: {fileID: 1816556949}
   - component: {fileID: 1816556952}
   - component: {fileID: 1816556951}
+  - component: {fileID: 1816556953}
   - component: {fileID: 1816556950}
   m_Layer: 10
-  m_Name: Ground (11)
+  m_Name: DeathGround (2)
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3679,6 +3764,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1816556953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816556948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d42c882d3118c8418b8c247c3058651, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canKill: 1
 --- !u!1001 &1843841165
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4408,6 +4506,11 @@ PrefabInstance:
       propertyPath: revolverReloadTime
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4004722732748696910, guid: 0b910e0ed472120418c8c30bafabb3b9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4004722733410312530, guid: 0b910e0ed472120418c8c30bafabb3b9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4417,6 +4520,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 4004722733843253733, guid: 0b910e0ed472120418c8c30bafabb3b9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b910e0ed472120418c8c30bafabb3b9, type: 3}
@@ -4435,7 +4543,7 @@ PrefabInstance:
     - target: {fileID: 8587289528305574717, guid: 017163f8d9db24eb694c9e99ee68da82,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.51
+      value: 3.38
       objectReference: {fileID: 0}
     - target: {fileID: 8587289528305574717, guid: 017163f8d9db24eb694c9e99ee68da82,
         type: 3}
