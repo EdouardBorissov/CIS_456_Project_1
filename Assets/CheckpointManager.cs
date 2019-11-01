@@ -5,7 +5,7 @@ using UnityEngine;
 public class CheckpointManager : MonoBehaviour
 {
     private Vector2 startingPosition;
-    public GameObject NewestCheckpoint;
+    public GameObject newestCheckpoint;
 
     public static CheckpointManager instance;
 
@@ -24,21 +24,21 @@ public class CheckpointManager : MonoBehaviour
         }
     }
 
-    public void setNewCheckpoint(GameObject newCheckpoint)
+    public void SetNewCheckpoint(GameObject newCheckpoint)
     {
-        NewestCheckpoint = newCheckpoint;
+        newestCheckpoint = newCheckpoint;
         newCheckpoint.tag = "Untagged";
     }
 
     public void LoadToLastCheckpoint()
     {
-        if (NewestCheckpoint == null)
+        if (newestCheckpoint == null)
         {
             transform.position = startingPosition;
         }
         else
         {
-            transform.position = NewestCheckpoint.transform.position;
+            transform.position = newestCheckpoint.transform.position;
         }
     }
 
@@ -47,7 +47,7 @@ public class CheckpointManager : MonoBehaviour
          Debug.Log("Entered Checkpoint");
         if (other.gameObject.tag == "Checkpoint")
         {
-            setNewCheckpoint(other.gameObject);
+            SetNewCheckpoint(other.gameObject);
         }
     }
 }
