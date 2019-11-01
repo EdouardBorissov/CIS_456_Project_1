@@ -14,7 +14,7 @@ using UnityEngine;
 public class Lever : MonoBehaviour
 {
     public List<TogglableObject> objectsToToggle;
-    public bool state = false;
+    public bool state;
     public float timeToClose = 0;
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -35,13 +35,13 @@ public class Lever : MonoBehaviour
 
             else
             {
-                state = !state;
                 //Switch up color for on and off;
 
                 foreach ( TogglableObject gameObj in objectsToToggle)
                 {
                     Debug.Log(gameObj.name + " was toggled");
-                    gameObj.Toggle(state);
+                    
+                    gameObj.Toggle();
                     if (timeToClose > 0)
                         StartCoroutine(Timer(timeToClose, gameObj));
                 }
@@ -52,7 +52,6 @@ public class Lever : MonoBehaviour
     IEnumerator Timer(float time, TogglableObject itemToClose)
     {
         yield return new WaitForSeconds(time);
-        state = false;
-        itemToClose.Toggle(state);
+        itemToClose.Toggle();
     }
 }

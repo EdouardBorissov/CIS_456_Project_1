@@ -15,10 +15,10 @@ public class Door : TogglableObject
     {
     }
 
-    public override void Toggle(bool set)
+    public override void Toggle()
     {
         Debug.Log("Door recieved Toggle");
-        toggledOn = set;
+        toggledOn = !toggledOn;
 
         if(toggledOn == true)
         {

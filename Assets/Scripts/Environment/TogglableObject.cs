@@ -6,5 +6,5 @@ public abstract class TogglableObject : MonoBehaviour
 {
     public bool toggledOn;
 
-    public abstract void Toggle(bool set);
+    public abstract void Toggle();
 }
