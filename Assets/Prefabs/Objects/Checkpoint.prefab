@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8587289528305574717}
   - component: {fileID: 8587289528305574714}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Checkpoint
   m_TagString: Checkpoint
   m_Icon: {fileID: 0}
@@ -67,7 +67,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8587289529064225976}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: RespawnSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
