@@ -7,9 +7,12 @@ public class CheckpointManager : MonoBehaviour
     private Vector2 startingPosition;
     public GameObject NewestCheckpoint;
 
+    public static CheckpointManager instance;
+
 
     void Start()
     {
+        instance = this;
         startingPosition = transform.position;
     }
 
