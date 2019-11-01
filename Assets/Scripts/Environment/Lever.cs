@@ -16,10 +16,19 @@ public class Lever : MonoBehaviour
     public List<TogglableObject> objectsToToggle;
     public bool state;
     public float timeToClose = 0;
+    private Collider2D leverCollider;
+
+    private void Start()
+    {
+        leverCollider = gameObject.GetComponent<Collider2D>();
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Bullet"))
         {
+            leverCollider.enabled = false;
+            gameObject.GetComponent<SpriteRenderer>().color = Color.gray;
             Debug.Log("Lever Hit");
 
             if (state && timeToClose > 0)
@@ -35,7 +44,6 @@ public class Lever : MonoBehaviour
 
             else
             {
-                //Switch up color for on and off;
 
                 foreach ( TogglableObject gameObj in objectsToToggle)
                 {
@@ -53,5 +61,7 @@ public class Lever : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         itemToClose.Toggle();
+        leverCollider.enabled = true;
+        gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
     }
 }
