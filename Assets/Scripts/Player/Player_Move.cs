@@ -50,6 +50,15 @@ public class Player_Move : MonoBehaviour
             playerRB.velocity = new Vector2(playerRB.velocity.x, jump);
             onGround = false;
         }
+
+        if (Input.GetKey(KeyCode.F))
+        {
+            Time.timeScale = 0.5f;
+        }
+        else
+        {
+            Time.timeScale = 1.0f;
+        }
     }
 
 

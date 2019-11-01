@@ -10,6 +10,7 @@ TagManager:
   - Wall
   - Rust
   - Chain
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
