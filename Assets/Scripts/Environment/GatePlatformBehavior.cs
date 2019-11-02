@@ -10,6 +10,15 @@ public class GatePlatformBehavior : TogglableObject
     private SpriteRenderer spriteRenderer;
     private Collider2D objCollider;
     private bool isToggled = false;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        deathFloorScript = gameObject.GetComponent<DeathFloorBehavior>();
+        objCollider = gameObject.GetComponent<Collider2D>();
+    }
+
     public override void Toggle()
     {
         if (isToggled)
@@ -30,10 +39,5 @@ public class GatePlatformBehavior : TogglableObject
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-        deathFloorScript = gameObject.GetComponent<DeathFloorBehavior>();
-    }
+
 }
