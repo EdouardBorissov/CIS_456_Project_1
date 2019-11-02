@@ -10,7 +10,7 @@ public class DeathFloorBehavior : MonoBehaviour
 {
     public bool canKill = true;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         if(collision.gameObject.name == "Player" && canKill)
         {
