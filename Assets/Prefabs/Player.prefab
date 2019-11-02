@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1352764065}
   - component: {fileID: 4004722732748696909}
   - component: {fileID: 1352764066}
+  - component: {fileID: 500472491}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: e1b141c8d6fc6474698093ea9a596e2e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e7c37985628f0ff4693f0d99d09a4841, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -103,10 +104,11 @@ MonoBehaviour:
   revolverBullet: {fileID: 1068660232534935893, guid: 9299728f6e380434dba5b89cb51554f1,
     type: 3}
   revolverBulletLifeTime: 10
-  revolverReloadTime: 3
+  revolverReloadTime: 1.5
   revolverBulletSpeed: 5000
-  revolverRof: 0.5
+  revolverRof: 0.1
   canShoot: 1
+  playerUIScript: {fileID: 0}
 --- !u!114 &1352764065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,10 +123,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mask:
     serializedVersion: 2
-    m_Bits: 0
-  speed: 500
-  jump: 10
-  jumpVary: 0
+    m_Bits: 1024
+  speed: 800
+  jump: 12
+  jumpVary: 300
   onGround: 1
 --- !u!61 &4004722732748696909
 BoxCollider2D:
@@ -173,6 +175,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &500472491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4004722732748696899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f216a926ab7fb4c32ad2000da82d62e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newestCheckpoint: {fileID: 0}
 --- !u!1 &4004722732865233751
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,7 +262,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4004722733410312529}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.2, y: -0.88, z: 0}
+  m_LocalPosition: {x: 3.09, y: -0.72, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4004722732865233744}
@@ -322,7 +337,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 76e2963be77551b47a6f89b0af77398a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e7abaf514f134f1459c61b7fe47131ba, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -402,7 +417,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6d02e38d480188546a5aa9ebb7d2f576, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f2cd94a227b832745b5901562860d5be, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -482,7 +497,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 53d6eb44e2359004b9a5eb1c5be1bfea, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8ad0d3bbae4204549b1b250ccad50e12, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
