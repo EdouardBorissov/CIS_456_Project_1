@@ -135,6 +135,7 @@ public class Player_Aim : MonoBehaviour
             transform.localScale = flip;
             playerTransform.localScale = playerFlip;
             hasFlipped *= -1;
+           // CameraManager.instance.xOffset *= -1;
         }
         else if (GetMouseCoordinates().x > 0 && hasFlipped == -1)//turnRight
         {
@@ -144,6 +145,7 @@ public class Player_Aim : MonoBehaviour
             transform.localScale = flip;
             playerTransform.localScale = playerFlip;
             hasFlipped *= -1;
+           // CameraManager.instance.xOffset *= -1;
         }
     }
 

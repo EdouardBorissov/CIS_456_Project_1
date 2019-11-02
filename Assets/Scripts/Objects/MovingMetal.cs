@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class MovingMetal : MonoBehaviour
 {
-    public Vector2 startingPosition;
-    public Vector2 endingPosition;
+    public Vector3 startingPosition;
+    public Vector3 endingPosition;
 
-    public float t = 0.0f;
+    private float t = 0.0f;
     private float direction = 1.0f;
 
     public float metalMoveSpeed;
@@ -16,6 +16,9 @@ public class MovingMetal : MonoBehaviour
 
     void Start()
     {
+        //startingPosition.z = gameObject.transform.position.z;
+       // endingPosition.z = gameObject.transform.position.z;
+        //Debug.Log(startingPosition.z);
         t = 0.0f;
         //child = transform.GetChild(0);
     }
@@ -37,6 +40,6 @@ public class MovingMetal : MonoBehaviour
         }
 
 
-        transform.localPosition = Vector2.Lerp(startingPosition, endingPosition, t);
+        transform.localPosition = Vector3.Lerp(startingPosition, endingPosition, t);
     }
 }
