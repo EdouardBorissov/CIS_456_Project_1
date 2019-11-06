@@ -17,10 +17,12 @@ public class Lever : MonoBehaviour
     public bool state;
     public float timeToClose = 0;
     private Collider2D leverCollider;
+    private Color orange;
 
     private void Start()
     {
         leverCollider = gameObject.GetComponent<Collider2D>();
+        orange = new Color(1.0f, .45f, 0f);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -51,6 +53,7 @@ public class Lever : MonoBehaviour
                     
                     gameObj.Toggle();
                     if (timeToClose > 0)
+                        state = true;
                         StartCoroutine(Timer(timeToClose, gameObj));
                 }
             }
@@ -59,9 +62,33 @@ public class Lever : MonoBehaviour
 
     IEnumerator Timer(float time, TogglableObject itemToClose)
     {
-        yield return new WaitForSeconds(time);
-        itemToClose.Toggle();
-        leverCollider.enabled = true;
-        gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
+        if (time > 1)
+        {
+            yield return new WaitForSeconds(time - 1);
+            Debug.Log("flashing");
+            gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
+            leverCollider.enabled = true;
+            yield return new WaitForSeconds(0.25f);
+            gameObject.GetComponent<SpriteRenderer>().color = Color.grey;
+            yield return new WaitForSeconds(0.25f);
+            gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
+            yield return new WaitForSeconds(0.25f);
+            gameObject.GetComponent<SpriteRenderer>().color = Color.grey;
+            yield return new WaitForSeconds(0.25f);
+            gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
+            itemToClose.Toggle();
+            state = false;
+        }
+
+        else
+        {
+
+            leverCollider.enabled = true;
+            yield return new WaitForSeconds(time);
+            Debug.Log("yellow lever");
+            itemToClose.Toggle();
+            state = false;
+            gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
+        }
     }
 }
