@@ -27,7 +27,7 @@ public class Player_Move : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(Input.GetKey(KeyCode.D))
         {
@@ -51,6 +51,10 @@ public class Player_Move : MonoBehaviour
             onGround = false;
         }
 
+    }
+
+    private void Update()
+    {
         if (Input.GetKey(KeyCode.F))
         {
             Time.timeScale = 0.5f;
@@ -60,7 +64,6 @@ public class Player_Move : MonoBehaviour
             Time.timeScale = 1.0f;
         }
     }
-
 
     void OnCollisionEnter2D(Collision2D collision)
     {
