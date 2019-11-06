@@ -62,7 +62,33 @@ public class Lever : MonoBehaviour
 
     IEnumerator Timer(float time, TogglableObject itemToClose)
     {
-        if (time > 1)
+        if (time > 1.5f)
+        {
+            yield return new WaitForSeconds(time - 1.5f);
+            Debug.Log("flashing");
+            gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
+            leverCollider.enabled = true;
+            yield return new WaitForSeconds(0.25f);
+            gameObject.GetComponent<SpriteRenderer>().color = Color.grey;
+            yield return new WaitForSeconds(0.25f);
+            gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
+            yield return new WaitForSeconds(0.25f);
+            gameObject.GetComponent<SpriteRenderer>().color = Color.grey;
+            yield return new WaitForSeconds(0.25f);
+            gameObject.GetComponent<SpriteRenderer>().color = Color.yellow; 
+            yield return new WaitForSeconds(0.125f);
+            gameObject.GetComponent<SpriteRenderer>().color = Color.grey;
+            yield return new WaitForSeconds(0.125f);
+            gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
+            yield return new WaitForSeconds(0.125f);
+            gameObject.GetComponent<SpriteRenderer>().color = Color.grey;
+            yield return new WaitForSeconds(0.125f);
+            gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
+            itemToClose.Toggle();
+            state = false;
+        }
+
+        else if (time > 1)
         {
             yield return new WaitForSeconds(time - 1);
             Debug.Log("flashing");
