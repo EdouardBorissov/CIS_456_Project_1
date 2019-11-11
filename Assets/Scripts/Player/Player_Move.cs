@@ -44,14 +44,8 @@ public class Player_Move : MonoBehaviour
 
         if (Physics2D.Raycast(transform.position, Vector2.down, 2, mask)) onGround = true;
         else onGround = false;
-
-        if(Input.GetKeyDown(KeyCode.Space) && onGround)
-        {
-            playerRB.velocity = new Vector2(playerRB.velocity.x, jump);
-            onGround = false;
-        }
-
     }
+
 
     private void Update()
     {
@@ -63,9 +57,10 @@ public class Player_Move : MonoBehaviour
         {
             Time.timeScale = 1.0f;
         }
-    }
-
-    void OnCollisionEnter2D(Collision2D collision)
-    {
+        if (Input.GetKeyDown(KeyCode.Space) && onGround)
+        {
+            playerRB.velocity = new Vector2(playerRB.velocity.x, jump);
+            onGround = false;
+        }
     }
 }
