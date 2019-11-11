@@ -58256,15 +58256,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: GroundToDestroy
       objectReference: {fileID: 0}
+    - target: {fileID: 7327137167928800426, guid: 2b495a6d95060054eba94e5bad02b81e,
+        type: 3}
+      propertyPath: m_TagString
+      value: DestroyBullet
+      objectReference: {fileID: 0}
+    - target: {fileID: 7327137167928800426, guid: 2b495a6d95060054eba94e5bad02b81e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4236500862560361620, guid: 2b495a6d95060054eba94e5bad02b81e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.29
+      value: 4.34
       objectReference: {fileID: 0}
     - target: {fileID: 4236500862560361620, guid: 2b495a6d95060054eba94e5bad02b81e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -40.54
+      value: -40.41
       objectReference: {fileID: 0}
     - target: {fileID: 4236500862560361620, guid: 2b495a6d95060054eba94e5bad02b81e,
         type: 3}
@@ -67361,7 +67371,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1475245789}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -70884,12 +70894,12 @@ PrefabInstance:
     - target: {fileID: 4004722732748696911, guid: 0b910e0ed472120418c8c30bafabb3b9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.9
+      value: 19.1
       objectReference: {fileID: 0}
     - target: {fileID: 4004722732748696911, guid: 0b910e0ed472120418c8c30bafabb3b9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.2
+      value: -34.6
       objectReference: {fileID: 0}
     - target: {fileID: 4004722732748696911, guid: 0b910e0ed472120418c8c30bafabb3b9,
         type: 3}
@@ -70941,6 +70951,10 @@ PrefabInstance:
       propertyPath: playerUIScript
       value: 
       objectReference: {fileID: 464316950}
+    - target: {fileID: 1352764065, guid: 0b910e0ed472120418c8c30bafabb3b9, type: 3}
+      propertyPath: speed
+      value: 400
+      objectReference: {fileID: 0}
     - target: {fileID: 4004722732748696910, guid: 0b910e0ed472120418c8c30bafabb3b9,
         type: 3}
       propertyPath: m_SortingLayerID
@@ -70950,10 +70964,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingLayer
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1352764065, guid: 0b910e0ed472120418c8c30bafabb3b9, type: 3}
-      propertyPath: speed
-      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 4004722733843253733, guid: 0b910e0ed472120418c8c30bafabb3b9,
         type: 3}
