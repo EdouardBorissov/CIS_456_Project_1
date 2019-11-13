@@ -7,6 +7,8 @@ using UnityEngine;
 
     Eddie - Helped Nathan refine movement by showing refactoring some of the code and switching movement to velocity.
     Connor - Revised jumping to make it more responsive. Longer hold = longer jump. Raycast vs tag system.
+
+    Warren - Implemented bullet time update
      
      */
 

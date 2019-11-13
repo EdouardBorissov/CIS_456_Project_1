@@ -6,10 +6,9 @@ public class LevelEnd : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("conversation.start:" );
         if (collision.gameObject.name == "Player")
         {
-            Debug.Log("conversation.end");
+            Manager_Game.instance.PlayMusic();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
