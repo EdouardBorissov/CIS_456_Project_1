@@ -18,10 +18,7 @@ public class CheckpointManager : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.F))
-        {
-            LoadToLastCheckpoint();
-        }
+
     }
 
     public void SetNewCheckpoint(GameObject newCheckpoint)
