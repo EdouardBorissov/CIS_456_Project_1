@@ -100,6 +100,14 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    public void StopAllSound()
+    {
+        foreach (Sound s in sounds)
+        {
+            s.source.Stop();
+        }
+    }
+
     //a string containing the names of all the ricochet sounds
     private string[] RicochetSounds = {"Ricochet1", "Ricochet2", "Ricochet3", "Ricochet4"};
 
