@@ -110,7 +110,8 @@ MonoBehaviour:
   revolverBulletSpeed: 5000
   revolverRof: 0.1
   canShoot: 1
-  playerUIScript: {fileID: 0}
+  playerUIScript: {fileID: 8900974272265655117, guid: 8c52b90ccfe0f704b8550f4fa74a4c5c,
+    type: 3}
 --- !u!114 &1352764065
 MonoBehaviour:
   m_ObjectHideFlags: 0
