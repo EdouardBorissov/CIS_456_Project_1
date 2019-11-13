@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Manager_Game : MonoBehaviour
 {
-
     public static Manager_Game instance;
 
     private void Start()
@@ -26,9 +25,13 @@ public class Manager_Game : MonoBehaviour
         PlayMusic();
 
     }
-
+    public void StartMusic()
+    {
+        Invoke("PlayMusic", 1);
+    }
     public void PlayMusic()
     {
+
         switch (SceneManager.GetActiveScene().buildIndex)
         {
 
@@ -36,18 +39,20 @@ public class Manager_Game : MonoBehaviour
                 // SoundManager.instance.PlaySound("MainMenu");
                 SoundManager.instance.StopAllSound();
                 SoundManager.instance.PlaySound("Level 1");
+                Debug.Log("Level 1 Sound Playing!");
                 break;
 
             case 1:
                 //SoundManager.instance.PlaySound("Level 1");
                 SoundManager.instance.StopAllSound();
                 SoundManager.instance.PlaySound("Level 2");
+                Debug.Log("Level 2 Sound Playing!");
                 break;
 
             case 2:
                 //SoundManager.instance.PlaySound("Level 2");
                 SoundManager.instance.StopAllSound();
-                SoundManager.instance.PlaySound("MainMenu");
+                Debug.Log("Main Menu Song Playing!");
                 break;
 
         }

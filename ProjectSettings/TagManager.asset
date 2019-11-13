@@ -11,6 +11,7 @@ TagManager:
   - Rust
   - Chain
   - Checkpoint
+  - SoundManager
   layers:
   - Default
   - TransparentFX

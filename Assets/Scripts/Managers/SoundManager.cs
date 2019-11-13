@@ -17,6 +17,48 @@ public class SoundManager : MonoBehaviour
     public static SoundManager instance;
 
 
+    void OnEnable()
+    {
+        MusicSwitching[] ms = FindObjectsOfType<MusicSwitching>();
+        if (ms.Length != 1) Destroy(gameObject);
+
+        instance = GetComponent<SoundManager>();
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+       StopAllSound();
+
+        switch (SceneManager.GetActiveScene().buildIndex)
+        {
+            case 0:
+                sm.PlaySound("Main Menu");
+                break;
+            case 1:
+                sm.PlaySound("Level 1");
+                break;
+            case 2:
+                sm.PlaySound("Level 2");
+                break;
+            case 3:
+                sm.PlaySound("Level 1");
+                break;
+            case 4:
+                sm.PlaySound("Level 4");
+                break;
+            case 5:
+                sm.PlaySound("Level 3I");
+                break;
+        }
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+
     //class for each sound has a name, source, clip, volume, and pitch
     [System.Serializable]
     public class Sound

@@ -8,8 +8,9 @@ public class LevelEnd : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
-            Manager_Game.instance.PlayMusic();
+  
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            Manager_Game.instance.StartMusic();
         }
     }
 }
