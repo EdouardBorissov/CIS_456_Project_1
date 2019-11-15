@@ -677,13 +677,25 @@ MonoBehaviour:
     source: {fileID: 0}
     clip: {fileID: 8300000, guid: 95ad23fecfea4114d8272e241ba2dfaa, type: 3}
     volume: 0.5
-    pitch: 0.5
+    pitch: 1
     shouldLoop: 1
   - name: Level 2
     source: {fileID: 0}
     clip: {fileID: 8300000, guid: d6d32ac878e692342815ff4c9f2d5897, type: 3}
     volume: 0.01
-    pitch: 0.5
+    pitch: 1
+    shouldLoop: 1
+  - name: Jump
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: 52158de9b2f01fc46a3b1527803b2fa3, type: 3}
+    volume: 0.5
+    pitch: 1
+    shouldLoop: 0
+  - name: Walk
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: 8bdeea29f2716f342906eb1aee31e89d, type: 3}
+    volume: 0.5
+    pitch: 1
     shouldLoop: 1
 --- !u!4 &105316183
 Transform:

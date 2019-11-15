@@ -18,6 +18,7 @@ public class Player_Move : MonoBehaviour
     public float jump = 5f;
     public float jumpVary;
     public bool onGround = true;
+    private bool isMoving = false;
     private Rigidbody2D playerRB;
     // Start is called before the first frame update
     void Start()
@@ -32,14 +33,28 @@ public class Player_Move : MonoBehaviour
         if(Input.GetKey(KeyCode.D))
         {
             playerRB.velocity = new Vector2(speed * Time.deltaTime, playerRB.velocity.y);
+            if(!isMoving)
+            {
+                isMoving = true;
+                SoundManager.instance.PlaySound("Walk");
+            }
         }
         else if (Input.GetKey(KeyCode.A))
         {
             playerRB.velocity = new Vector2(speed * Time.deltaTime * -1, playerRB.velocity.y);
+            if (!isMoving)
+            {
+                isMoving = true;
+                SoundManager.instance.PlaySound("Walk");
+            }
         }
         else
         {
             playerRB.velocity = new Vector2(0, playerRB.velocity.y);
+            
+                isMoving = false;
+                SoundManager.instance.StopSound("Walk");
+            
         }
 
         if (Physics2D.Raycast(transform.position, Vector2.down, 2, mask)) onGround = true;
@@ -61,6 +76,7 @@ public class Player_Move : MonoBehaviour
         {
             playerRB.velocity = new Vector2(playerRB.velocity.x, jump);
             onGround = false;
+            SoundManager.instance.PlaySound("Jump");
         }
     }
 }
