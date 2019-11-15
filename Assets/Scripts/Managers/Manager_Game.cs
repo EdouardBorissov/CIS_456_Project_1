@@ -52,6 +52,7 @@ public class Manager_Game : MonoBehaviour
             case 2:
                 //SoundManager.instance.PlaySound("Level 2");
                 SoundManager.instance.StopAllSound();
+                SoundManager.instance.PlaySound("MainMenu");
                 Debug.Log("Main Menu Song Playing!");
                 break;
 
