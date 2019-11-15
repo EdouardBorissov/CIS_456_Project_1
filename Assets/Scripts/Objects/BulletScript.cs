@@ -44,6 +44,10 @@ public class BulletScript : MonoBehaviour
             {
                 Destroy(gameObject);
             }
+            else
+            {
+                ScoreManager.instance.IncrementRicochets();
+            }
 
         }
         else if (collision.gameObject.CompareTag("Rust"))

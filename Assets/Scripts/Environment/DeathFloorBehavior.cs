@@ -15,6 +15,7 @@ public class DeathFloorBehavior : MonoBehaviour
         if(collision.gameObject.name == "Player" && canKill)
         {
             CheckpointManager.instance.LoadToLastCheckpoint();
+            ScoreManager.instance.IncrementDeaths();
         }
     }
 }

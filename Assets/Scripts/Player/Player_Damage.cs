@@ -28,6 +28,7 @@ public class Player_Damage : MonoBehaviour
 
         if(currentHealth <= 0)
         {
+            ScoreManager.instance.IncrementDeaths();
             Destroy(player);
         }
     }

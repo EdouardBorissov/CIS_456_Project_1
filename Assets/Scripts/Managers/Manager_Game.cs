@@ -59,4 +59,9 @@ public class Manager_Game : MonoBehaviour
         }
 
     }
+
+    public void ResetLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }

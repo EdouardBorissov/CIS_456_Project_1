@@ -54,6 +54,8 @@ public class Player_Shoot : MonoBehaviour
                 Invoke("RevolverCanFire", revolverRof);//Allows the Revolver to be fired after (revolverRoF) seconds.
                 loadedRevolverAmmo--;
                 GameObject firedBullet = Instantiate(revolverBullet, revolverMuzzle.transform.position, revolverMuzzle.transform.rotation);//Spawns bullet.
+                ScoreManager.instance.IncrementShotsFired();
+                
                 SoundManager.instance.PlaySound("Gunshot");
                 firedBullet.GetComponent<Rigidbody2D>().velocity = revolverMuzzle.transform.right * revolverBulletSpeed * Time.deltaTime;
 
@@ -66,6 +68,7 @@ public class Player_Shoot : MonoBehaviour
                     Invoke("ReloadRevolver", revolverReloadTime);
                     canFireRevolver = false;
                 }
+
             }
 
         }

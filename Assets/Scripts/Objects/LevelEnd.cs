@@ -8,9 +8,17 @@ public class LevelEnd : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
-  
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            Manager_Game.instance.StartMusic();
+            int finalScore = ScoreManager.instance.TallyFinalScore();
+
+            Debug.Log(finalScore.ToString());
+            
+            ScoreManager.instance.DisplayFinalScore();
         }
+    }
+
+    public void LoadNextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Manager_Game.instance.StartMusic();
     }
 }
