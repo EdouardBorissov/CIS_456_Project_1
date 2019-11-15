@@ -40,7 +40,6 @@ public class Player_Shoot : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             playerUIScript.ReloadBullets();
-            SoundManager.instance.PlaySound("Reload");
             Invoke("ReloadRevolver", revolverReloadTime);
         }
     }
@@ -64,7 +63,6 @@ public class Player_Shoot : MonoBehaviour
                 if (loadedRevolverAmmo <= 0) // If the player tries to shoot, auto-reload.
                 {
                     playerUIScript.ReloadBullets();
-                    SoundManager.instance.PlaySound("Reload");
                     Invoke("ReloadRevolver", revolverReloadTime);
                     canFireRevolver = false;
                 }
