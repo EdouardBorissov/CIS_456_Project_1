@@ -30,6 +30,8 @@ public class PlayerUI_Ammo : MonoBehaviour
 
     public void ReloadBullets()
     {
+        SoundManager.instance.PlaySound("Reload");
+
         InvokeRepeating("RotateCylinder", 0, rotateFrequency);
         bulletsFired = 0;
         foreach(GameObject gameObj in ui_Bullets)
@@ -40,6 +42,8 @@ public class PlayerUI_Ammo : MonoBehaviour
 
     public void StopRotatingCylinder()
     {
+        SoundManager.instance.StopSound("Reload");
+
         CancelInvoke("RotateCylinder");
         cylinder.rectTransform.rotation = Quaternion.Euler(0, 0, 0);
     }

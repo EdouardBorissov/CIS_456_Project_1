@@ -673,6 +673,12 @@ MonoBehaviour:
     volume: 0.01
     pitch: 1
     shouldLoop: 1
+  - name: Reload
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: 95ad23fecfea4114d8272e241ba2dfaa, type: 3}
+    volume: 0.5
+    pitch: 0.5
+    shouldLoop: 1
   - name: Level 2
     source: {fileID: 0}
     clip: {fileID: 8300000, guid: d6d32ac878e692342815ff4c9f2d5897, type: 3}

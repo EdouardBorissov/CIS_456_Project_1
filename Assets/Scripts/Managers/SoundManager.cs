@@ -88,7 +88,7 @@ public class SoundManager : MonoBehaviour
     //Loops through the array until a sound with the same name 
     //as the string that was passed through is found, and then
     //plays stops sound
-    public void StopStound(string clipName)
+    public void StopSound(string clipName)
     {
         foreach (Sound s in sounds)
         {

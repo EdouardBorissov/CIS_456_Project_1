@@ -73,7 +73,6 @@ public class Player_Shoot : MonoBehaviour
 
     public void ReloadRevolver()
     {
-
         for (int i = 6; i > 0; i--)//tries to put six bullets in
         {
             if (loadedRevolverAmmo < 6) //makes sure u have bullets to take, and slots to put them in
@@ -85,6 +84,7 @@ public class Player_Shoot : MonoBehaviour
                 playerUIScript.StopRotatingCylinder();
                 RevolverCanFire();
             }
+            
             playerUIScript.StopRotatingCylinder();
         }
     }
