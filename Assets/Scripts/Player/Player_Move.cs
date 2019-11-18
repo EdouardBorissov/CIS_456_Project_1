@@ -57,7 +57,7 @@ public class Player_Move : MonoBehaviour
             
         }
 
-        if (Physics2D.Raycast(transform.position, Vector2.down, 2, mask)) onGround = true;
+        if (Physics2D.Raycast(transform.position, Vector2.down, 1.5f, mask)) onGround = true;
         else onGround = false;
     }
 
@@ -77,6 +77,14 @@ public class Player_Move : MonoBehaviour
             playerRB.velocity = new Vector2(playerRB.velocity.x, jump);
             onGround = false;
             SoundManager.instance.PlaySound("Jump");
+        }
+        if (!onGround)
+        {
+            GetComponent<PhysicsMaterial2D>().friction = 0;
+        }
+        else
+        {
+            GetComponent<PhysicsMaterial2D>().friction = 0.4f;
         }
     }
 }
