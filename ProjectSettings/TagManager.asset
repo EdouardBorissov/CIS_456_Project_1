@@ -12,6 +12,7 @@ TagManager:
   - Chain
   - Checkpoint
   - SoundManager
+  - SlowDown
   layers:
   - Default
   - TransparentFX

@@ -19,6 +19,7 @@ public class Player_Move : MonoBehaviour
     public float jumpVary;
     public bool onGround = true;
     private bool isMoving = false;
+    private bool canBulletTime = false;
     private Rigidbody2D playerRB;
     // Start is called before the first frame update
     void Start()
@@ -57,34 +58,20 @@ public class Player_Move : MonoBehaviour
             
         }
 
-        if (Physics2D.Raycast(transform.position, Vector2.down, 1.5f, mask)) onGround = true;
+        if (Physics2D.Raycast(transform.position, Vector2.down, 1.75f, mask)) onGround = true;
         else onGround = false;
     }
 
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.F))
-        {
-            Time.timeScale = 0.5f;
-        }
-        else
-        {
-            Time.timeScale = 1.0f;
-        }
         if (Input.GetKeyDown(KeyCode.Space) && onGround)
         {
             playerRB.velocity = new Vector2(playerRB.velocity.x, jump);
             onGround = false;
             SoundManager.instance.PlaySound("Jump");
         }
-        if (!onGround)
-        {
-            GetComponent<PhysicsMaterial2D>().friction = 0;
-        }
-        else
-        {
-            GetComponent<PhysicsMaterial2D>().friction = 0.4f;
-        }
     }
+
+
 }
