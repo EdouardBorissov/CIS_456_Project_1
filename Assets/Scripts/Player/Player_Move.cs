@@ -19,13 +19,17 @@ public class Player_Move : MonoBehaviour
     public float jumpVary;
     public bool onGround = true;
     private bool isMoving = false;
-    private bool canBulletTime = false;
+    public bool canBulletTime = false;
     private Rigidbody2D playerRB;
+    public GameObject timeManager;
     // Start is called before the first frame update
     void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
-        //transform.position = new Vector2(-12, -3);
+        if (canBulletTime)
+        {
+            timeManager.SetActive(true);
+        }
     }
 
     // Update is called once per frame

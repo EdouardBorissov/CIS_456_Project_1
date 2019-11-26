@@ -4,29 +4,36 @@ using UnityEngine;
 
 public class TimeManager : MonoBehaviour
 {
-    private bool canBulletTime = false;
-
-    private bool inBulletTime = false;
+    public static bool inBulletTime = false;
 
     public float bulletTimeLimit = 3.0f;
 
+    private GameObject player;
+
+    private GameObject bullet;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Mouse1) && canBulletTime && !inBulletTime)
+        if ((Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.F)) && !inBulletTime)
         {
+            Debug.Log("DFSDFSDF");
             Time.timeScale = 0.5f;
-            BulletTimeLimit(bulletTimeLimit);
-
-        }
-        else
-        {
-            Time.timeScale = 1.0f;
+            player.gameObject.GetComponent<Rigidbody2D>().velocity *= 2;
+            inBulletTime = true;
+            StartCoroutine(BulletTimeLimit(bulletTimeLimit));
         }
     }
 
     IEnumerator BulletTimeLimit(float time)
     {
         yield return new WaitForSeconds(time);
-
+        Debug.Log("ssssssssssssssssssss");
+        Time.timeScale = 1.0f;
+        player.gameObject.GetComponent<Rigidbody2D>().velocity /= 2;
+        inBulletTime = false;
     }
 }
