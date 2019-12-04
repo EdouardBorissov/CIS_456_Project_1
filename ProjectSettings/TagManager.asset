@@ -56,3 +56,6 @@ TagManager:
   - name: Hats
     uniqueID: 380015253
     locked: 0
+  - name: Tile
+    uniqueID: 582001673
+    locked: 0
