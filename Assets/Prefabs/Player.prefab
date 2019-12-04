@@ -131,6 +131,8 @@ MonoBehaviour:
   jump: 12
   jumpVary: 300
   onGround: 1
+  canBulletTime: 0
+  timeManager: {fileID: 0}
 --- !u!61 &4004722732748696909
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -370,7 +372,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 380015253
   m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: e7abaf514f134f1459c61b7fe47131ba, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1

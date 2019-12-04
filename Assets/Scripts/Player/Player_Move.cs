@@ -62,7 +62,7 @@ public class Player_Move : MonoBehaviour
             
         }
 
-        if (Physics2D.Raycast(transform.position, Vector2.down, 1.75f, mask)) onGround = true;
+        if (Physics2D.CircleCast(transform.position, .9f, Vector2.down, 1.75f, mask)) onGround = true;
         else onGround = false;
     }
 
