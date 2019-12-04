@@ -14,12 +14,33 @@ public class BulletScript : MonoBehaviour
 
     private float bulletSpeed;
 
+    private float singleSpeed;
+
+    private float doubleSpeed;
 
     //how many times the bullet bounces before it destroys itself
     //(if it's 0 it will bounce for forever)
     public int bounceLimit;
 
     private float numberOfBounces = 0;
+
+    private void Start()
+    {
+        singleSpeed = bulletSpeed;
+        doubleSpeed = bulletSpeed * 2;
+    }
+
+    private void Update()
+    {
+        if (TimeManager.inBulletTime)
+        {
+            bulletSpeed = doubleSpeed;
+        }
+        else
+        {
+            bulletSpeed = singleSpeed;
+        }
+    }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
