@@ -14,6 +14,7 @@ using UnityEngine;
 public class Player_Move : MonoBehaviour
 {
     public LayerMask mask;
+    public bool canMove = true;
     public float speed = 5f;
     public float jump = 5f;
     public float jumpVary;
@@ -35,54 +36,65 @@ public class Player_Move : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(Input.GetKey(KeyCode.D))
+        if (canMove)
         {
-            playerRB.velocity = new Vector2(speed * Time.deltaTime, playerRB.velocity.y);
-            if (TimeManager.inBulletTime)
+            if (Input.GetKey(KeyCode.D))
             {
-                playerRB.velocity = new Vector2(speed * 2 * Time.deltaTime, playerRB.velocity.y);
+                playerRB.velocity = new Vector2(speed * Time.deltaTime, playerRB.velocity.y);
+
+                if (TimeManager.inBulletTime)
+                {
+                    playerRB.velocity = new Vector2(speed * 2 * Time.deltaTime, playerRB.velocity.y);
+                }
+
+                if (!isMoving)
+                {
+                    isMoving = true;
+                    SoundManager.instance.PlaySound("Walk");
+                }
             }
-            if(!isMoving)
+
+            if (Input.GetKey(KeyCode.A))
             {
-                isMoving = true;
-                SoundManager.instance.PlaySound("Walk");
+                playerRB.velocity = new Vector2(speed * -1 * Time.deltaTime, playerRB.velocity.y);
+
+                if (TimeManager.inBulletTime)
+                {
+                    playerRB.velocity = new Vector2(speed * -2 * Time.deltaTime, playerRB.velocity.y);
+                }
+
+                if (!isMoving)
+                {
+                    isMoving = true;
+                    SoundManager.instance.PlaySound("Walk");
+                }
             }
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            playerRB.velocity = new Vector2(speed * Time.deltaTime * -1, playerRB.velocity.y);
-            if (TimeManager.inBulletTime)
+
+            else
             {
-                playerRB.velocity = new Vector2(speed * Time.deltaTime * -2, playerRB.velocity.y);
-            }
-            if (!isMoving)
-            {
-                isMoving = true;
-                SoundManager.instance.PlaySound("Walk");
-            }
-        }
-        else
-        {
-            playerRB.velocity = new Vector2(0, playerRB.velocity.y);
-            
+                playerRB.velocity = new Vector2(0, playerRB.velocity.y);
+
                 isMoving = false;
                 SoundManager.instance.StopSound("Walk");
-            
+            }
+
+            if (Physics2D.BoxCast(transform.position, new Vector2(1.7f, 3.0f), .85f)) onGround = true;
+            else onGround = false;
         }
-
-        if (Physics2D.BoxCast(transform.position, new Vector2(1.7f, 3.0f), .85f) ) onGround = true;
-        else onGround = false;
     }
-
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && onGround)
+        if(canMove)
         {
-            playerRB.velocity = new Vector2(playerRB.velocity.x, jump);
-            onGround = false;
-            SoundManager.instance.PlaySound("Jump");
+            if (Input.GetKeyDown(KeyCode.Space) && onGround)
+            {
+                playerRB.velocity = new Vector2(playerRB.velocity.x, jump);
+                onGround = false;
+                SoundManager.instance.PlaySound("Jump");
+            }
         }
+
     }
 
 

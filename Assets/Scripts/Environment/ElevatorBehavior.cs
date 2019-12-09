@@ -6,18 +6,38 @@ public class ElevatorBehavior : TogglableObject
 {
     private bool canToggle = true;
     public List<GameObject> walls;
+    private Vector3 startPosition;
     public Transform endPosition;
     public float speed;
     public GameObject lever;
+    private GameObject player;
 
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         foreach(GameObject wall in walls)
         {
             wall.SetActive(false);
         }
-
+        startPosition = gameObject.transform.position;
         lever.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (player.gameObject.GetComponent<Player_Health>().isDead)
+        {
+            ResetElevator();
+            Debug.Log("This should have happened");
+            CancelInvoke();
+            player.transform.SetParent(null, true);
+            lever.SetActive(false);
+            gameObject.transform.position = startPosition;
+            foreach (GameObject wall in walls)
+            {
+                wall.SetActive(false);
+            }
+        }
     }
 
     public override void Toggle()
@@ -29,9 +49,14 @@ public class ElevatorBehavior : TogglableObject
             {
                 wall.SetActive(true);
             }
-            InvokeRepeating("MoveElevator", 0, .025f);
+            InvokeRepeating("MoveElevator", 0, .01f);
         }
  
+    }
+
+    public void ResetElevator()
+    {
+        canToggle = true;
     }
 
     private void MoveElevator()
@@ -69,6 +94,7 @@ public class ElevatorBehavior : TogglableObject
         {
             collision.transform.SetParent(null,true);
             lever.SetActive(false);
+   
         }
     }
 }
