@@ -36,41 +36,52 @@ public class Player_Move : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(canMove)
+        if (canMove)
         {
             if (Input.GetKey(KeyCode.D))
             {
                 playerRB.velocity = new Vector2(speed * Time.deltaTime, playerRB.velocity.y);
+
+                if (TimeManager.inBulletTime)
+                {
+                    playerRB.velocity = new Vector2(speed * 2 * Time.deltaTime, playerRB.velocity.y);
+                }
+
                 if (!isMoving)
                 {
                     isMoving = true;
                     SoundManager.instance.PlaySound("Walk");
                 }
             }
-            else if (Input.GetKey(KeyCode.A))
+
+            if (Input.GetKey(KeyCode.A))
             {
-                playerRB.velocity = new Vector2(speed * Time.deltaTime * -1, playerRB.velocity.y);
+                playerRB.velocity = new Vector2(speed * -1 * Time.deltaTime, playerRB.velocity.y);
+
+                if (TimeManager.inBulletTime)
+                {
+                    playerRB.velocity = new Vector2(speed * -2 * Time.deltaTime, playerRB.velocity.y);
+                }
+
                 if (!isMoving)
                 {
                     isMoving = true;
                     SoundManager.instance.PlaySound("Walk");
                 }
             }
+
             else
             {
                 playerRB.velocity = new Vector2(0, playerRB.velocity.y);
 
                 isMoving = false;
                 SoundManager.instance.StopSound("Walk");
-
             }
 
-            if (Physics2D.CircleCast(transform.position, .9f, Vector2.down, 1.75f, mask)) onGround = true;
+            if (Physics2D.BoxCast(transform.position, new Vector2(1.7f, 3.0f), .85f)) onGround = true;
             else onGround = false;
         }
-        
     }
-
 
     private void Update()
     {

@@ -22,7 +22,6 @@ public class TimeManager : MonoBehaviour
         {
             Debug.Log("DFSDFSDF");
             Time.timeScale = 0.5f;
-            player.gameObject.GetComponent<Rigidbody2D>().velocity *= 2;
             inBulletTime = true;
             StartCoroutine(BulletTimeLimit(bulletTimeLimit));
         }
