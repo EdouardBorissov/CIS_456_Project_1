@@ -14,6 +14,7 @@ using UnityEngine;
 public class Player_Move : MonoBehaviour
 {
     public LayerMask mask;
+    public bool canMove = true;
     public float speed = 5f;
     public float jump = 5f;
     public float jumpVary;
@@ -35,46 +36,54 @@ public class Player_Move : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(Input.GetKey(KeyCode.D))
+        if(canMove)
         {
-            playerRB.velocity = new Vector2(speed * Time.deltaTime, playerRB.velocity.y);
-            if(!isMoving)
+            if (Input.GetKey(KeyCode.D))
             {
-                isMoving = true;
-                SoundManager.instance.PlaySound("Walk");
+                playerRB.velocity = new Vector2(speed * Time.deltaTime, playerRB.velocity.y);
+                if (!isMoving)
+                {
+                    isMoving = true;
+                    SoundManager.instance.PlaySound("Walk");
+                }
             }
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            playerRB.velocity = new Vector2(speed * Time.deltaTime * -1, playerRB.velocity.y);
-            if (!isMoving)
+            else if (Input.GetKey(KeyCode.A))
             {
-                isMoving = true;
-                SoundManager.instance.PlaySound("Walk");
+                playerRB.velocity = new Vector2(speed * Time.deltaTime * -1, playerRB.velocity.y);
+                if (!isMoving)
+                {
+                    isMoving = true;
+                    SoundManager.instance.PlaySound("Walk");
+                }
             }
-        }
-        else
-        {
-            playerRB.velocity = new Vector2(0, playerRB.velocity.y);
-            
+            else
+            {
+                playerRB.velocity = new Vector2(0, playerRB.velocity.y);
+
                 isMoving = false;
                 SoundManager.instance.StopSound("Walk");
-            
-        }
 
-        if (Physics2D.CircleCast(transform.position, .9f, Vector2.down, 1.75f, mask)) onGround = true;
-        else onGround = false;
+            }
+
+            if (Physics2D.CircleCast(transform.position, .9f, Vector2.down, 1.75f, mask)) onGround = true;
+            else onGround = false;
+        }
+        
     }
 
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && onGround)
+        if(canMove)
         {
-            playerRB.velocity = new Vector2(playerRB.velocity.x, jump);
-            onGround = false;
-            SoundManager.instance.PlaySound("Jump");
+            if (Input.GetKeyDown(KeyCode.Space) && onGround)
+            {
+                playerRB.velocity = new Vector2(playerRB.velocity.x, jump);
+                onGround = false;
+                SoundManager.instance.PlaySound("Jump");
+            }
         }
+
     }
 
 

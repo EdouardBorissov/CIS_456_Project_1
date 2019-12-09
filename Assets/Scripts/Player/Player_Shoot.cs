@@ -31,6 +31,7 @@ public class Player_Shoot : MonoBehaviour
     [Tooltip("A bool to be used externally.")] public bool canShoot = true; //Put this here if we want other scripts to stop the player from shooting. 
     private bool canFireRevolver = true;//Used for rate of fire.
     public PlayerUI_Ammo playerUIScript;
+
     void Update()
     {
         if (Input.GetButtonDown("Fire1") && canShoot)
