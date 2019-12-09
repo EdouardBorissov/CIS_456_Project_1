@@ -78,7 +78,7 @@ public class Player_Move : MonoBehaviour
                 SoundManager.instance.StopSound("Walk");
             }
 
-            if (Physics2D.BoxCast(transform.position, new Vector2(1.7f, 3.0f), .85f)) onGround = true;
+            if (Physics2D.BoxCast(transform.position, new Vector2(1.7f, 3.0f), .85f, Vector2.down)) onGround = true;
             else onGround = false;
         }
     }
