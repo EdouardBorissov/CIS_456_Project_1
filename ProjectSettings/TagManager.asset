@@ -13,6 +13,7 @@ TagManager:
   - Checkpoint
   - SoundManager
   - SlowDown
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX
@@ -58,4 +59,7 @@ TagManager:
     locked: 0
   - name: Tile
     uniqueID: 582001673
+    locked: 0
+  - name: Gibs
+    uniqueID: 287977271
     locked: 0
